@@ -1,3 +1,3 @@
-# Digit Audio Classification
+# Digit Audio Classification 🔢
 
-A Deep Learning model that classifies digits based on Audio Inputs.
+A Deep Learning model that classifies digits based on its Audio Input.
