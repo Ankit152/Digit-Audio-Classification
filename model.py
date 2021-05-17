@@ -2,14 +2,14 @@
 import pandas as pd 
 import numpy as np
 import matplotlib.pyplot as plt
-from keras.models import Sequential
+from keras.models import Sequential,load_model
 from keras.layers import Dense,Dropout,Activation,Flatten
 from keras.optimizers import Adam
 from sklearn import metrics
 from sklearn.model_selection import train_test_split as tts
 from keras.utils import to_categorical
-from keras.losses import SparseCategoricalCrossentropy
-from keras.metrics import SparseCategoricalAccuracy
+from keras.callbacks import ModelCheckpoint
+import time
 
 print("Libraries are imported....")
 
@@ -45,13 +45,16 @@ model.add(Activation('relu'))
 model.add(Dropout(0.25))
 model.add(Dense(10,activation="softmax"))
 
+checkpointer = ModelCheckpoint('DigitAudio.h5', save_best_only=True,monitor='val_loss',mode='auto')
+
 print("Model architecture is done....")
-model.compile(loss = SparseCategoricalCrossentropy(), optimizer="adam",metrics=[SparseCategoricalAccuracy("accuracy")])
+model.compile(loss = "categorical_crossentropy", optimizer="adam",metrics=["accuracy"])
 print("Model compiled....")
 print("Training is starting....")
-hist = model.fit(xtrain,ytrain,batch_size=16,epochs=200,validation_data=(xtest, ytest))
+start = time.time()
+hist = model.fit(xtrain,ytrain,batch_size=16,epochs=200,validation_data=(xtest, ytest),callbacks=[checkpointer])
 print("Model training is over....")
-model.save("DigitAudio.h5")
+print("Total Time taken: ",time.time()-start)
 print("Model saved....")
 
 # plotting the figures
@@ -76,6 +79,7 @@ plt.legend(loc='upper right')
 plt.savefig('./img/loss.png')
 print("Figures saved in the disk....")
 
+model=load_model("DigitAudio.h5")
 # testing the model
 print("Testing the model....")
 print("The result obtained is...\n")
