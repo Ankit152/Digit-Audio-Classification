@@ -11,7 +11,7 @@ An audio signal is a representation of sound, typically using either a changing 
 
 
 ## Waveplots 〰
-These are the waveplots of the digits when we spell it. Please note that we are spelling `one` or any other digit as it should be spelled, not like like `oooooaannee` or something like that. You can also try it once. Its funny though. 😆 
+These are the waveplots of the digits when we spell it. Please note that we are spelling `one` or any other digit as it should be spelled, not like like `oooooaannee` or something like that. You can also try it once. Its funny though. 😆😆😆😆
 
 ### Zero 0️⃣
 
