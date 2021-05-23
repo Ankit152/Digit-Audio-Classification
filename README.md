@@ -74,3 +74,13 @@ These are the waveplots of the digits when we spell it. Please note that we are 
 <p>
   <img src="https://github.com/Ankit152/DigitAudio/blob/main/img/9.png" width=1000>
 </p>
+
+
+## Countplot 📊
+
+**This is the countplot of the audio data. The X-axis represents the digits 0-9 and the Y-axis represents the count of respective digit.**
+<p>
+  <img src="https://github.com/Ankit152/DigitAudio/blob/main/img/countplotAudio.png" width=1000>
+</p>
+
+*We can note that the dataset is equally distributed i.e. they are balanced.*
