@@ -118,3 +118,9 @@ The model was trained over 200 epochs. Here are the `accuracy` and `loss` curves
 </p>
 
 *From the above figure we can say that the model is not overfitting.*
+
+### Training Record 📓
+
+<p align=center>
+  <img src="https://github.com/Ankit152/DigitAudio/blob/main/img/training.png">
+</p>
